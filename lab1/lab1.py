@@ -178,3 +178,12 @@ if __name__ == "__main__":
     for generated in generated_strings:
         result = automaton.stringBelongToLanguage(generated)
         print(f"{generated} -> {result}")
+
+    print("\nManual FA check (type 'exit' to stop):")
+    while True:
+        candidate = input("Input string: ").strip()
+        if candidate.lower() == "exit":
+            break
+
+        is_accepted = automaton.stringBelongToLanguage(candidate)
+        print(f"Accepted: {is_accepted}")
